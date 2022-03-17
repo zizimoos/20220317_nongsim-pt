@@ -4,7 +4,6 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "./Model";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Navigatior from "../Navigatior";
 
 const NextButton = styled.button`
   width: 50px;
@@ -19,7 +18,6 @@ const NextButton = styled.button`
 export default function CharacterAni() {
   return (
     <>
-      <Navigatior />
       <Canvas
         camera={{ position: [2, 0, 12.25], fov: 15 }}
         style={{

@@ -6,7 +6,6 @@ import { Guy } from "./components/Guy";
 import { Mug, Chair, Table, Lamp } from "./components/Furniture";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Navigatior from "../Navigatior";
 
 const NextButton = styled.button`
   width: 50px;
@@ -21,7 +20,6 @@ const NextButton = styled.button`
 export default function RagDoll() {
   return (
     <>
-      <Navigatior />
       <Canvas
         dpr={[1, 2]}
         shadows

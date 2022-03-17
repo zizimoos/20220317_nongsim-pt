@@ -8,7 +8,6 @@ import {
   ContactShadows,
 } from "@react-three/drei";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import Navigatior from "../Navigatior";
 
 function Model(props) {
   /*
@@ -88,7 +87,6 @@ export default function EarthIcons() {
   const ref = useRef();
   return (
     <>
-      <Navigatior />
       <Canvas
         dpr={[1, 2]}
         camera={{ position: [5, 0, 0], fov: 50 }}

@@ -9,10 +9,12 @@ import EarthIcons from "./components/Presentation/EarthIcons";
 import Intro from "./components/Presentation/Intro";
 import Product from "./components/Presentation/Product";
 import RagDoll from "./components/Presentation/RagDoll";
+import Navigatior from "./components/Navigatior";
 
 function Router(props) {
   return (
     <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <Navigatior />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

@@ -7,7 +7,6 @@ import { a as three } from "@react-spring/three";
 import { a as web } from "@react-spring/web";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Navigatior from "../Navigatior";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -123,7 +122,6 @@ export default function Product() {
   const props = useSpring({ open: Number(open) });
   return (
     <Wrapper>
-      <Navigatior />
       <web.main
         style={{ background: props.open.to([0, 1], ["#f0f0f0", "#d25578"]) }}
       >

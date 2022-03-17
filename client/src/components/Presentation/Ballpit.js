@@ -3,7 +3,16 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Physics, usePlane, useSphere } from "@react-three/cannon";
 import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing";
 import styled from "styled-components";
-import Navigatior from "../Navigatior";
+
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #171717;
+`;
 
 const NextButton = styled.button`
   width: 50px;
@@ -17,8 +26,7 @@ const NextButton = styled.button`
 
 export default function Ballpit() {
   return (
-    <>
-      <Navigatior />
+    <Wrapper>
       <Canvas
         shadows
         gl={{ stencil: false, antialias: false }}
@@ -67,7 +75,7 @@ export default function Ballpit() {
       <Link to="/characterani">
         <NextButton>NEXT</NextButton>
       </Link>
-    </>
+    </Wrapper>
   );
 }
 

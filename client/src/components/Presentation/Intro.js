@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Navigatior from "../Navigatior";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -36,7 +35,6 @@ const NextButton = styled.button`
 function Intro(props) {
   return (
     <>
-      <Navigatior />
       <Wrapper>
         <MetaTextSvg
           viewBox="0 0 416.895 86.279"
@@ -61,7 +59,7 @@ function Intro(props) {
         <MetaLogoSvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
           <motion.path
             stroke="white"
-            stroke-width="2"
+            stroke-width="10"
             initial={{ pathLength: 0, fill: "rgba(255,255,255,0)" }}
             animate={{ pathLength: 1, fill: "rgba(255,255,255,1)" }}
             transition={{
