@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -19,6 +20,16 @@ const MetaLogoSvg = styled.svg`
 const MetaTextSvg = styled.svg`
   width: 500px;
   height: 100px;
+`;
+
+const NextButton = styled.button`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
 `;
 
 function Intro(props) {
@@ -84,6 +95,9 @@ function Intro(props) {
         </MetaTextSvg>
 
         <motion.div></motion.div>
+        <Link to="/about">
+          <NextButton>NEXT</NextButton>
+        </Link>
       </Wrapper>
     </>
   );

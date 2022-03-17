@@ -17,15 +17,6 @@ function Home(props) {
   return (
     <>
       <Intro></Intro>
-      <About></About>
-      <Product></Product>
-      <CharacterAni></CharacterAni>
-      <RagDoll></RagDoll>
-      <Ballpit></Ballpit>
-      <EarthIcons></EarthIcons>
-      <Link to="/gameapp">
-        <NavigatorItem>GAME</NavigatorItem>
-      </Link>
     </>
   );
 }

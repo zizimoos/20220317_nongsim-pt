@@ -8,6 +8,7 @@ import {
   Stars,
 } from "@react-three/drei";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -30,6 +31,16 @@ const Title = styled.h1`
   line-height: 0.6em;
   letter-spacing: -2px;
   text-align: left;
+`;
+
+const NextButton = styled.button`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
 `;
 
 /*
@@ -97,6 +108,9 @@ export default function About() {
       </Canvas>
       <div className="layer" />
       <Loader />
+      <Link to="/ballpit">
+        <NextButton>NEXT</NextButton>
+      </Link>
     </Wrapper>
   );
 }

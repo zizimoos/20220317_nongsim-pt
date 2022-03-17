@@ -1,54 +1,71 @@
+import { Link } from "react-router-dom";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Physics, usePlane, useSphere } from "@react-three/cannon";
 import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing";
+import styled from "styled-components";
+
+const NextButton = styled.button`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+`;
 
 export default function Ballpit() {
   return (
-    <Canvas
-      shadows
-      gl={{ stencil: false, antialias: false }}
-      camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
-      style={{ width: "100vw", height: "100vh" }}
-    >
-      <fog attach="fog" args={["red", 25, 35]} />
-      <color attach="background" args={["#ffdd41"]} />
-      <ambientLight intensity={1.5} />
-      <directionalLight position={[-10, -10, -5]} intensity={0.5} />
-      <directionalLight
-        castShadow
-        intensity={4}
-        position={[50, 50, 25]}
-        shadow-mapSize={[256, 256]}
-        shadow-camera-left={-10}
-        shadow-camera-right={10}
-        shadow-camera-top={10}
-        shadow-camera-bottom={-10}
-      />
-      <Physics
-        gravity={[0, -50, 0]}
-        defaultContactMaterial={{ restitution: 0.5 }}
+    <>
+      <Canvas
+        shadows
+        gl={{ stencil: false, antialias: false }}
+        camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
+        style={{ width: "100vw", height: "100vh" }}
       >
-        <group position={[0, 0, -10]}>
-          <Mouse />
-          <Borders />
-          <InstancedSpheres />
-        </group>
-      </Physics>
-      <EffectComposer>
-        <SSAO
-          radius={0.4}
-          intensity={50}
-          luminanceInfluence={0.4}
-          color="red"
+        <fog attach="fog" args={["red", 25, 35]} />
+        <color attach="background" args={["#ffdd41"]} />
+        <ambientLight intensity={1.5} />
+        <directionalLight position={[-10, -10, -5]} intensity={0.5} />
+        <directionalLight
+          castShadow
+          intensity={4}
+          position={[50, 50, 25]}
+          shadow-mapSize={[256, 256]}
+          shadow-camera-left={-10}
+          shadow-camera-right={10}
+          shadow-camera-top={10}
+          shadow-camera-bottom={-10}
         />
-        <Bloom
-          intensity={1.25}
-          kernelSize={2}
-          luminanceThreshold={0.85}
-          luminanceSmoothing={0.0}
-        />
-      </EffectComposer>
-    </Canvas>
+        <Physics
+          gravity={[0, -50, 0]}
+          defaultContactMaterial={{ restitution: 0.5 }}
+        >
+          <group position={[0, 0, -10]}>
+            <Mouse />
+            <Borders />
+            <InstancedSpheres />
+          </group>
+        </Physics>
+        <EffectComposer>
+          <SSAO
+            radius={0.4}
+            intensity={50}
+            luminanceInfluence={0.4}
+            color="red"
+          />
+          <Bloom
+            intensity={1.25}
+            kernelSize={2}
+            luminanceThreshold={0.85}
+            luminanceSmoothing={0.0}
+          />
+        </EffectComposer>
+      </Canvas>
+      <Link to="/characterani">
+        <NextButton>NEXT</NextButton>
+      </Link>
+    </>
   );
 }
 

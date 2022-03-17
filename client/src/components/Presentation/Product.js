@@ -6,6 +6,7 @@ import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
 import { a as web } from "@react-spring/web";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Wrapper = styled.div`
   height: 100%;
@@ -14,6 +15,16 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center; */
+`;
+
+const NextButton = styled.button`
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
 `;
 
 const vec = new THREE.Vector3();
@@ -157,6 +168,9 @@ export default function Product() {
           />
         </Canvas>
       </web.main>
+      <Link to="/ragdoll">
+        <NextButton>NEXT</NextButton>
+      </Link>
     </Wrapper>
   );
 }
