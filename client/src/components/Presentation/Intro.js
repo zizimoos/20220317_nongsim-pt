@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Navigatior from "../Navigatior";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -35,6 +36,7 @@ const NextButton = styled.button`
 function Intro(props) {
   return (
     <>
+      <Navigatior />
       <Wrapper>
         <MetaTextSvg
           viewBox="0 0 416.895 86.279"

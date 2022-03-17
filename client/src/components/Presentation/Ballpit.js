@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Physics, usePlane, useSphere } from "@react-three/cannon";
 import { EffectComposer, SSAO, Bloom } from "@react-three/postprocessing";
 import styled from "styled-components";
+import Navigatior from "../Navigatior";
 
 const NextButton = styled.button`
   width: 50px;
@@ -17,6 +18,7 @@ const NextButton = styled.button`
 export default function Ballpit() {
   return (
     <>
+      <Navigatior />
       <Canvas
         shadows
         gl={{ stencil: false, antialias: false }}

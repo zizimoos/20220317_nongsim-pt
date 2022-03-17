@@ -9,6 +9,7 @@ import {
 } from "@react-three/drei";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import Navigatior from "../Navigatior";
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -73,6 +74,7 @@ function Model({ url }) {
 export default function About() {
   return (
     <Wrapper>
+      <Navigatior />
       <div className="bg" />
       <Title>
         What <span style={{ fontSize: "0.4em" }}>with</span>
